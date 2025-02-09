@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('includes/db.php');
 
     $error = '';
@@ -22,10 +23,23 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$username, $email, $hashedPassword, 'user']);
 
-            $success = "Registration successful! You can now <a href='login.php'>login</a>.";
+            $sql = "SELECT * FROM users WHERE username = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$username]);
+
+            $user = $stmt->fetch();
+
+            if ($user) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+
+                header('Location: domains.php');
+                exit;
+            }
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
