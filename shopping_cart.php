@@ -34,6 +34,7 @@ $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co.uk", "be", "fr", "i
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/shopping_cart.css">
@@ -51,7 +52,7 @@ $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co.uk", "be", "fr", "i
                     <?php foreach ($allExtensions as $ext): ?>
                         <?php if (isset($extensionsInCart[$ext])): ?>
                             <div class="extension-item active">
-                                <span><?php echo '.' . htmlspecialchars($ext); ?> - $<?php echo number_format($extensionsInCart[$ext], 2); ?></span>
+                                <span><?php echo '.' . htmlspecialchars($ext); ?> $<?php echo number_format($extensionsInCart[$ext], 2); ?></span>
                                 <a href="remove_from_cart.php?domain=<?php echo urlencode($mainDomain . '.' . $ext); ?>" class="remove-btn">x</a>
                             </div>
                         <?php else: ?>
