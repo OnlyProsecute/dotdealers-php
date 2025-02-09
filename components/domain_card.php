@@ -10,7 +10,6 @@ function renderDomainCard($domainData) {
         <div class="domain-title">
             <h2>
                 <?php echo htmlspecialchars($baseDomain); ?>
-            
                 <select class="domain-dropdown" id="domain-extension">
                     <?php
                     foreach ($domainData as $domain) {
@@ -26,14 +25,17 @@ function renderDomainCard($domainData) {
             </h2>
         </div>
 
+        <!-- Vertical Divider -->
+        <div class="divider"></div>
+
         <div class="domain-information">
             <p id="domain-price">Price: N/A</p>
-
             <div id="add-to-cart">
                 <button class="custom-button" style="color:black;" disabled>Add to Cart</button>
             </div>
         </div>
     </div>
+
 
     <script>
         document.getElementById('domain-extension').addEventListener('change', function() {
@@ -48,7 +50,7 @@ function renderDomainCard($domainData) {
             var addToCartButton = document.getElementById('add-to-cart');
 
             if (status === 'free') {
-                addToCartButton.innerHTML = '<button class="link-button" onClick="handleAddToCart()" style="color:black;">Add to Cart</button>';
+                addToCartButton.innerHTML = '<button class="custom-button" onClick="handleAddToCart()">Add to Cart</button>';
             } else {
                 addToCartButton.innerHTML = '<p>Unavailable</p>';
             }
