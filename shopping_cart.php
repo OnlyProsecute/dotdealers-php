@@ -39,6 +39,8 @@ $totalVatAllDomains = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/shopping_cart.css">
@@ -54,7 +56,6 @@ $totalVatAllDomains = 0;
                 <div class="shopping-card-top">
                     <div class="title-column">
                         <h3 class="shopping-title">
-                            <!-- Make the domain name clickable -->
                             <a href="domains.php?url-search=<?php echo urlencode($mainDomain); ?>" class="link-button" style="font-size: 1.75rem;">
                                 <?php echo strtoupper(htmlspecialchars($mainDomain)); ?>
                             </a>

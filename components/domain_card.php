@@ -29,7 +29,7 @@ function renderDomainCard($domainData) {
             <p id="domain-price">Price: N/A</p>
 
             <div id="add-to-cart">
-                <button class="link-button" style="color:black;" disabled>Add to Cart</button>
+                <button class="custom-button" style="color:black;" disabled>Add to Cart</button>
             </div>
         </div>
     </div>

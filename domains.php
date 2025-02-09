@@ -42,6 +42,7 @@
     echo '<link rel="stylesheet" href="assets/css/custom_button.css">';
     echo '<link rel="stylesheet" href="assets/css/header.css">';
     echo '<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">';
+    echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">';
 
     renderHeader();
 ?>

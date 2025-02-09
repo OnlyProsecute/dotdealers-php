@@ -7,8 +7,10 @@ function renderHeader() {
         <a href="/dotdealers-php">DOT•DEALERS</a>
         
         <form action="<?php echo ($currentPage !== 'domains.php' ? 'domains.php' : '#'); ?>" method="GET" class="search-container">
-            <input type="text" placeholder="Enter URL without extension" name="url-search" required>
-            <button type="submit" class="link-button" style="color: black;">Check URL</button>
+            <input class="input-field" type="text" placeholder="Enter URL without extension" name="url-search" required>
+            <button type="submit" class="link-button" style="color: black;">
+                <i class="fas fa-search"></i>
+            </button>
         </form>
         
         <div class="header-icon">

@@ -4,6 +4,12 @@
     --foreground: #171717;
 }
 
+::selection {
+    background-color: #4CAF50;
+    color: var(--background);
+}
+
+
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
@@ -110,8 +116,28 @@ body {
 .search-message {
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: #222222;
     display: block;
+}
+
+.input-field {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: transparent;
+    margin-top: 1rem;
+}
+
+.input-field:focus {
+    background-color: transparent;
+    color: var(--foreground);
+    outline: none;
+    border-color: #555;
+}
+
+form {
+    margin: 0%; 
 }
 
 @keyframes flicker {
