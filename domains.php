@@ -17,7 +17,7 @@
             ["name" => $searchQuery, "extension" => "net"],
             ["name" => $searchQuery, "extension" => "eu"],
             ["name" => $searchQuery, "extension" => "de"],
-            ["name" => $searchQuery, "extension" => "co.uk"],
+            ["name" => $searchQuery, "extension" => "co"],
             ["name" => $searchQuery, "extension" => "be"],
             ["name" => $searchQuery, "extension" => "fr"],
             ["name" => $searchQuery, "extension" => "it"]

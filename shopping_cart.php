@@ -24,7 +24,7 @@ foreach ($cartItems as $item) {
     $domains[$mainDomain][$item['extension']] = $item['price']; 
 }
 
-$allExtensions = ["nl", "com", "org", "net", "eu", "de", "co.uk", "be", "fr", "it"];
+$allExtensions = ["nl", "com", "org", "net", "eu", "de", "co", "be", "fr", "it"];
 
 ?>
 
