@@ -1,5 +1,8 @@
 <?php
+    session_start(); // Start the session to access session variables
+    $isLoggedIn = isset($_SESSION['user_id']) && isset($_SESSION['username']);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +18,21 @@
         <div class="landing-background"></div>
         <div class="content">
             <h1 class="heading">DOT•DEALERS</h1>
-            <p class="subheading">Claim your name</p>
+            <p class="subheading">
+                <?php if ($isLoggedIn): ?>
+                    Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!
+                <?php else: ?>
+                    Claim your name
+                <?php endif; ?>
+            </p>
             <div class="button-container">
-                <a href="login.php" class="link-button">Login</a>
-                <a href="register.php" class="link-button">Register</a>
+                <?php if (!$isLoggedIn): ?>
+                    <a href="login.php" class="link-button">Log in</a>
+                    <a href="register.php" class="link-button">Register</a>
+                <?php else: ?>
+                    <a href="domains.php" class="link-button">Domains</a>
+                    <a href="logout.php" class="link-button">Logout</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

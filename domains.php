@@ -1,6 +1,4 @@
 <?php
-    session_start();
-
     include('components/domain_card.php');
     include('components/custom_button.php');
     include('components/header.php');
