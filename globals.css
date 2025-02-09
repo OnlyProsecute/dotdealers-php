@@ -71,7 +71,7 @@ body {
     margin-left: 1rem;
 }
 
-.button {
+.link-button {
     padding: 0.5rem;
     font-size: 1rem;
     text-decoration: none;
@@ -80,7 +80,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.button:hover {
+.link-button:hover {
     background-color: rgb(32, 32, 32);
 }
 

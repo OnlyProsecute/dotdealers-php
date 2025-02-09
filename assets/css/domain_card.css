@@ -8,7 +8,7 @@
     background-color: black;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 450px;
+    width: 500px;
     height: 125px;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -31,4 +31,18 @@
     margin-bottom: 10px;
     justify-content: flex-end;
     align-items: flex-end;
+}
+
+.domain-dropdown {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.domain-dropdown option {
+    color: black;
 }

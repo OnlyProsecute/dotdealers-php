@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    flex: 0 1 auto;
+}
+
+.header .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .search-container input {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.header .header-icon {
+    display: flex;
+    align-items: center;
+}

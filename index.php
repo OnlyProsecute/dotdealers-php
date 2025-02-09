@@ -17,8 +17,8 @@
             <h1 class="heading">DOT•DEALERS</h1>
             <p class="subheading">Claim your name</p>
             <div class="button-container">
-                <a href="login.php" class="button">Login</a>
-                <a href="register.php" class="button">Register</a>
+                <a href="login.php" class="link-button">Login</a>
+                <a href="register.php" class="link-button">Register</a>
             </div>
         </div>
     </div>
