@@ -25,6 +25,11 @@ foreach ($cartItems as $item) {
 }
 
 $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co", "be", "fr", "it"];
+
+$vatRate = 1.21;
+
+$totalOriginalPriceAllDomains = 0;
+$totalVatAllDomains = 0;
 ?>
 
 <!DOCTYPE html>
@@ -69,20 +74,42 @@ $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co", "be", "fr", "it"]
                 </div>
 
                 <div class="price-list">
-                    <h4>Prices:</h4>
+                    <h4>Prices - (Cost + VAT):</h4>
                     <ul>
                         <?php 
-                        $totalPrice = 0;
+                        $totalOriginalPrice = 0;
+                        $totalVat = 0;
                         foreach ($extensionsInCart as $ext => $price): 
+                            $originalPrice = $price / $vatRate;
+                            $vatAmount = $price - $originalPrice;
                         ?>
-                            <li><?php echo '.' . htmlspecialchars($ext); ?> - $<?php echo number_format($price, 2); ?></li>
-                            <?php $totalPrice += $price; ?>
+                            <li>
+                                <?php echo '.' . htmlspecialchars($ext); ?> - 
+                                $<?php echo number_format($originalPrice, 2); ?> +
+                                $<?php echo number_format($vatAmount, 2); ?>
+                            </li>
+                            <?php 
+                            $totalOriginalPrice += $originalPrice;
+                            $totalVat += $vatAmount;
+                            ?>
                         <?php endforeach; ?>
                     </ul>
-                    <p><strong>Total: $<?php echo number_format($totalPrice, 2); ?></strong></p>
+                    <p><strong>Total: $<?php echo number_format($totalOriginalPrice + $totalVat, 2); ?></strong></p>
                 </div>
             </div>
+
+            <?php
+            $totalOriginalPriceAllDomains += $totalOriginalPrice;
+            $totalVatAllDomains += $totalVat;
+            ?>
         <?php endforeach; ?>
+
+        <?php if (count($domains) > 1): ?>
+            <div class="grand-total">
+                <h4>Grand Total: $<?php echo number_format($totalOriginalPriceAllDomains + $totalVatAllDomains, 2); ?> (Original Price + VAT)</h4>
+            </div>
+        <?php endif; ?>
+
     <?php else: ?>
         <p class="empty-cart">Your cart is empty.</p>
     <?php endif; ?>

@@ -139,3 +139,12 @@
     font-weight: bold;
     margin-top: 10px;
 }
+
+.grand-total {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
