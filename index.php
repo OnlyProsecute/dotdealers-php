@@ -1,5 +1,5 @@
 <?php
-    session_start(); // Start the session to access session variables
+    session_start();
     $isLoggedIn = isset($_SESSION['user_id']) && isset($_SESSION['username']);
 ?>
 

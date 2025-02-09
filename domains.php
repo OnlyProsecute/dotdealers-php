@@ -21,8 +21,7 @@
             ["name" => $searchQuery, "extension" => "be"],
             ["name" => $searchQuery, "extension" => "fr"],
             ["name" => $searchQuery, "extension" => "it"]
-        ]
-        );
+        ]);
         
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -45,8 +44,16 @@
     echo '<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">';
 
     renderHeader();
-
-    if ($domainData) {
-        renderDomainCard($domainData);
-    }
 ?>
+
+<div class="search-container-wrapper">
+    <?php
+        if ($domainData) {
+            renderDomainCard($domainData);
+        } else {
+            if (!$searchQuery) {
+                echo '<div class="search-message">SEARCH FOR A DOMAIN NAME</div>';
+            }
+        }
+    ?>
+</div>

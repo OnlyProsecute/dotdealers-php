@@ -46,8 +46,8 @@ $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co.uk", "be", "fr", "i
 <div class="cart-container">
     <?php if (!empty($domains)): ?>
         <?php foreach ($domains as $mainDomain => $extensionsInCart): ?>
-            <div class="domain-card">
-                <h3 class="domain-title"><?php echo strtoupper(htmlspecialchars($mainDomain)); ?></h3>
+            <div class="shopping-card">
+                <h3 class="shopping-title"><?php echo strtoupper(htmlspecialchars($mainDomain)); ?></h3>
                 <div class="extensions">
                     <?php foreach ($allExtensions as $ext): ?>
                         <?php if (isset($extensionsInCart[$ext])): ?>

@@ -12,6 +12,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     color: var(--foreground);
     background: var(--background);
     font-family: 'Geist Mono', sans-serif;
@@ -82,6 +85,33 @@ body {
 
 .link-button:hover {
     background-color: rgb(32, 32, 32);
+}
+
+.search-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #161616;
+    text-align: center;
+}
+
+.search-container-wrapper {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.search-message {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
 }
 
 @keyframes flicker {
