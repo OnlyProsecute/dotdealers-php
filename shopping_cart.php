@@ -53,7 +53,12 @@ $totalVatAllDomains = 0;
             <div class="shopping-card">
                 <div class="shopping-card-top">
                     <div class="title-column">
-                        <h3 class="shopping-title"><?php echo strtoupper(htmlspecialchars($mainDomain)); ?></h3>
+                        <h3 class="shopping-title">
+                            <!-- Make the domain name clickable -->
+                            <a href="domains.php?url-search=<?php echo urlencode($mainDomain); ?>" class="link-button" style="font-size: 1.75rem;">
+                                <?php echo strtoupper(htmlspecialchars($mainDomain)); ?>
+                            </a>
+                        </h3>
                     </div>
                     <div class="extensions-column">
                         <div class="extensions">
