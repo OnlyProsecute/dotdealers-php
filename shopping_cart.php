@@ -18,14 +18,13 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $domains = [];
 foreach ($cartItems as $item) {
     $mainDomain = explode('.', $item['domain_url'])[0]; 
-        if (!isset($domains[$mainDomain])) {
+    if (!isset($domains[$mainDomain])) {
         $domains[$mainDomain] = [];
     }
     $domains[$mainDomain][$item['extension']] = $item['price']; 
 }
 
 $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co", "be", "fr", "it"];
-
 ?>
 
 <!DOCTYPE html>
@@ -47,20 +46,40 @@ $allExtensions = ["nl", "com", "org", "net", "eu", "de", "co", "be", "fr", "it"]
     <?php if (!empty($domains)): ?>
         <?php foreach ($domains as $mainDomain => $extensionsInCart): ?>
             <div class="shopping-card">
-                <h3 class="shopping-title"><?php echo strtoupper(htmlspecialchars($mainDomain)); ?></h3>
-                <div class="extensions">
-                    <?php foreach ($allExtensions as $ext): ?>
-                        <?php if (isset($extensionsInCart[$ext])): ?>
-                            <div class="extension-item active">
-                                <span><?php echo '.' . htmlspecialchars($ext); ?> $<?php echo number_format($extensionsInCart[$ext], 2); ?></span>
-                                <a href="remove_from_cart.php?domain=<?php echo urlencode($mainDomain . '.' . $ext); ?>" class="remove-btn">x</a>
-                            </div>
-                        <?php else: ?>
-                            <div class="extension-item inactive">
-                                <span><?php echo '.' . htmlspecialchars($ext); ?></span>
-                            </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                <div class="shopping-card-top">
+                    <div class="title-column">
+                        <h3 class="shopping-title"><?php echo strtoupper(htmlspecialchars($mainDomain)); ?></h3>
+                    </div>
+                    <div class="extensions-column">
+                        <div class="extensions">
+                            <?php foreach ($allExtensions as $ext): ?>
+                                <?php if (isset($extensionsInCart[$ext])): ?>
+                                    <div class="extension-item active">
+                                        <span><?php echo '.' . htmlspecialchars($ext); ?></span>
+                                        <a href="remove_from_cart.php?domain=<?php echo urlencode($mainDomain . '.' . $ext); ?>" class="remove-btn">x</a>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="extension-item inactive">
+                                        <span><?php echo '.' . htmlspecialchars($ext); ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-list">
+                    <h4>Prices:</h4>
+                    <ul>
+                        <?php 
+                        $totalPrice = 0;
+                        foreach ($extensionsInCart as $ext => $price): 
+                        ?>
+                            <li><?php echo '.' . htmlspecialchars($ext); ?> - $<?php echo number_format($price, 2); ?></li>
+                            <?php $totalPrice += $price; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                    <p><strong>Total: $<?php echo number_format($totalPrice, 2); ?></strong></p>
                 </div>
             </div>
         <?php endforeach; ?>
