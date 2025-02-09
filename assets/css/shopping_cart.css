@@ -1,0 +1,81 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.domain-card {
+    background: var(--background);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.domain-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--foreground);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.extensions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.extension-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.extension-item.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: bold;
+}
+
+.extension-item.inactive {
+    background: rgba(255, 255, 255, 0.05);
+    color: grey;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+    background: #1c1c1c;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--foreground);
+    margin-top: 20px;
+}

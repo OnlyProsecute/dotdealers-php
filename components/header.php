@@ -1,9 +1,9 @@
 <?php
 
-function renderHeader($label) {
+function renderHeader() {
     ?>
     <div class="header">
-        <a href="/dotdealers-php"><?= $label ?></a>
+        <a href="/dotdealers-php">DOT•DEALERS</a>
 
         <form action="" method="GET" class="search-container">
             <input type="text" placeholder="Enter URL without extension" name="url-search" required>

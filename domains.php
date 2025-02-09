@@ -44,7 +44,7 @@
     echo '<link rel="stylesheet" href="assets/css/header.css">';
     echo '<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">';
 
-    renderHeader('DOT•DEALERS');
+    renderHeader();
 
     if ($domainData) {
         renderDomainCard($domainData);
