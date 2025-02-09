@@ -1,6 +1,7 @@
 <?php
 session_start();
 echo '<link rel="stylesheet" href="../assets/css/domain_card.css">';
+echo'<link rel="stylesheet" href="../assets/css/custom_button.css">';
 
 function renderDomainCard($domainData) {
     $baseDomain = explode('.', $domainData[0]['domain'])[0];

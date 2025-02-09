@@ -1,21 +1,14 @@
 :root {
-    --size: 25px;
-    --background: #ffffff;
-    --foreground: #171717;
+    --size: 20px;
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --green: #245224;
 }
 
 ::selection {
-    background-color: #4CAF50;
+    background-color: var(--green);
     color: var(--background);
-}
-
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-}
+} 
 
 body {
     display: flex;
@@ -46,7 +39,7 @@ body {
         radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / var(--size) var(--size),
         url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
     mask-composite: intersect;
-    animation: flicker 30s infinite linear;
+    animation: flicker 20s infinite linear;
 }
 
 .content {
@@ -124,20 +117,33 @@ body {
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 5px;
-    border: 1px solid #333;
+    border: 2px solid #333;
     background-color: transparent;
+    color: var(--foreground);
     margin-top: 1rem;
 }
 
 .input-field:focus {
-    background-color: transparent;
-    color: var(--foreground);
+    background-color: transparent !important;
+    color: var(--foreground) !important;
     outline: none;
     border-color: #555;
 }
 
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover, 
+.input-field:-webkit-autofill:focus, 
+.input-field:-webkit-autofill:active {
+    background-color: transparent !important;
+    color: var(--foreground) !important;
+    -webkit-text-fill-color: var(--foreground) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--background) inset !important;
+    box-shadow: 0 0 0px 1000px var(--background) inset !important;
+}
+
+
 form {
-    margin: 0%; 
+    margin: 0; 
 }
 
 @keyframes flicker {

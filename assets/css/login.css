@@ -1,0 +1,39 @@
+.login-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    height: 40%;
+    background-color: rgba(34, 34, 34, 0.12);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.switch-mode-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.switch-mode-container p { 
+    margin: -.45rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.input-container input {
+    margin-top: -1rem;
+}
+
+.login-container { 
+    align-items: center; 
+}
