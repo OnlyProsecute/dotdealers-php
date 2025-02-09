@@ -91,8 +91,8 @@ $totalVatAllDomains = 0;
                         ?>
                             <li>
                                 <?php echo '.' . htmlspecialchars($ext); ?> - 
-                                $<?php echo number_format($originalPrice, 2); ?> +
-                                $<?php echo number_format($vatAmount, 2); ?>
+                                €<?php echo number_format($originalPrice, 2); ?> +
+                                €<?php echo number_format($vatAmount, 2); ?>
                             </li>
                             <?php 
                             $totalOriginalPrice += $originalPrice;
@@ -100,7 +100,7 @@ $totalVatAllDomains = 0;
                             ?>
                         <?php endforeach; ?>
                     </ul>
-                    <p><strong>Total: $<?php echo number_format($totalOriginalPrice + $totalVat, 2); ?></strong></p>
+                    <p><strong>Total: €<?php echo number_format($totalOriginalPrice + $totalVat, 2); ?></strong></p>
                 </div>
             </div>
 
@@ -112,7 +112,7 @@ $totalVatAllDomains = 0;
 
         <?php if (count($domains) > 1): ?>
             <div class="grand-total">
-                <h4>Grand Total: $<?php echo number_format($totalOriginalPriceAllDomains + $totalVatAllDomains, 2); ?> (Original Price + VAT)</h4>
+                <h4>Grand Total: €<?php echo number_format($totalOriginalPriceAllDomains + $totalVatAllDomains, 2); ?> (Original Price + VAT)</h4>
             </div>
         <?php endif; ?>
 

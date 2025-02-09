@@ -43,7 +43,7 @@ function renderDomainCard($domainData) {
             var extension = selectedOption.value;
             var domainName = "<?php echo $baseDomain; ?>";
 
-            document.getElementById('domain-price').innerText = 'Price: ' + price;
+            document.getElementById('domain-price').innerText = '€' + price;
 
             var addToCartButton = document.getElementById('add-to-cart');
 

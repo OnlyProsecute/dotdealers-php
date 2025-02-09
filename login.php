@@ -17,7 +17,7 @@
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
 
-            header('Location: index.php'); 
+            header('Location: domains.php'); 
             exit;
         } else {
             echo "Invalid username or password.";
