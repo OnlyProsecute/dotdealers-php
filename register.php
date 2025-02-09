@@ -34,34 +34,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="globals.css">
+        <link rel="stylesheet" href="assets/css/register.css">
+        <link rel="stylesheet" href="assets/css/custom_button.css">
         <title>REGISTER</title>
     </head>
 <body>
+    <div class="relative">
+        <div class="landing-background"></div>
+        <div class="content">
+            <div class="register-card">
 
-    <h2>Register</h2>
+                <h2>REGISTER</h2>
 
-    <?php if (!empty($error)): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
-    <?php endif; ?>
+                <form action="register.php" method="POST">
+                    <div class="input-container">
+                        <label for="username">Username:</label>
+                        <input class="input-field" type="text" name="username" id="username" required><br><br>
+                    </div>
 
-    <?php if (!empty($success)): ?>
-        <p style="color: green;"><?php echo $success; ?></p>
-    <?php endif; ?>
+                    <div class="input-container">
+                        <label class="input-title" for="email">Email:</label>
+                        <input class="input-field" type="email" name="email" id="email" required><br><br>
+                    </div>
 
-    <form action="register.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required><br><br>
-        
-        <input type="submit" value="Register">
-    </form>
+                    <div class="input-container">
+                        <label class="input-title" for="password">Password:</label>
+                        <input class="input-field" type="password" name="password" id="password" required><br><br>
+                    </div>
 
-    <p>Already have an account? <a href="login.php">Login</a></p>
+                    <div class="input-container register-container">
+                        <input class="custom-button"  type="submit" value="Register">
+                    </div>
 
+                </form>
+
+                <div class="switch-mode-container">
+                    <p>Already have an account? </p> 
+                    <a href="login.php" class="link-button"><strong>Login</strong></a>
+                </div>  
+            </div>
+        </div>
+    </div>
 </body>
 </html>
