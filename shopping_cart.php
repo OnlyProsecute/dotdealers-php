@@ -43,6 +43,7 @@ $totalVatAllDomains = 0;
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="globals.css">
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/custom_button.css">
     <link rel="stylesheet" href="assets/css/shopping_cart.css">
 </head>
 <body>
@@ -109,6 +110,9 @@ $totalVatAllDomains = 0;
             $totalVatAllDomains += $totalVat;
             ?>
         <?php endforeach; ?>
+        <div class="checkout-btn">
+            <a class="custom-button" href="order.php" style="color:#333; text-decoration: none;">Checkout</a>
+        </div>
 
         <?php if (count($domains) > 1): ?>
             <div class="grand-total">
